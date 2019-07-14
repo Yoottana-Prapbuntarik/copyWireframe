@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
             <div className="mt-5">
-                <Banner text="โปรโมชั่น" img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                <Banner link="Promotion" _padding="20" text="โปรโมชั่น" img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
                 <div className="container">
                     <div className="row">
                         <Category text="Category#1" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />

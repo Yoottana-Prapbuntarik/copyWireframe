@@ -24,12 +24,17 @@ div {
 svg{
     color:#333;
 }
+/*Banner*/
 .category{
     opacity: 0.85;
 }
 .category :hover{
     opacity : 0.5;
     text-decoration: none;
+}
+.blurHover :hover{
+    opacity : 0.5;
+    text-decoration: none !important;
 }
 
 .wrapper-card-img{
@@ -56,4 +61,15 @@ svg{
 }
 .card {
     border: 0px !important;
+}
+/*Dropdown*/
+.menudropdown > .dropdown > button {
+    color: #000 !important;
+    background-color: #fff;
+    border-color: #000;
+}
+.menudropdown > .dropdown > button:hover {
+    color: #fff !important;
+    background-color: #000;
+    border-color: #000;
 }

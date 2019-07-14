@@ -1,9 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom';
 export default function Banner(props) {
     return (
-        <NavLink className="blurHover" style={{textDecoration:'none'}} to={`/${props.link}`}>
-
             <div className="container " style={{
                 backgroundImage: `url(${props.img})`, maxWidth: '100%', backgroundAttachment: 'fixed',
                 backgroundPosition: 'center', opacity: 0.9,
@@ -16,6 +13,5 @@ export default function Banner(props) {
                 </div>
 
             </div>
-        </NavLink>
     )
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Card, CardBody, CardImg, CardTitle, CardSubtitle } from 'reactstrap';
+import { Card, CardBody, CardImg } from 'reactstrap';
 class ProductBox extends Component {
     render() {
         let { img, text, textCost } = this.props;
