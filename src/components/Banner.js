@@ -2,7 +2,7 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 export default function Banner(props) {
     return (
-        <NavLink className="blurHover" style={{textDecoration:'none'}} to={`/${props.link}`}>
+        <NavLink  style={{textDecoration:'none'}} to={`/${props.link}`}>
 
             <div className="container " style={{
                 backgroundImage: `url(${props.img})`, maxWidth: '100%', backgroundAttachment: 'fixed',
@@ -11,7 +11,7 @@ export default function Banner(props) {
             }}>
                 <div className="row">
                     <div className="col-12 text-center text-white">
-                        <h1 style={{ fontSize: '70px' }}>{props.text}</h1>
+                        <h1 style={{ fontSize: '70px', color:`${props.color}` }}>{props.text}</h1>
                     </div>
                 </div>
 
