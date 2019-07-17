@@ -137,3 +137,24 @@ svg{
     border-radius: 0.25rem;
     text-decoration: none;    
 }
+
+/* Cart */
+.Cart{
+    border-radius: 3px;
+    top: 75px;
+    right: 39px;
+    width: 350px;
+    border: 1px solid rgb(0, 0, 0);
+    position: absolute;
+    z-index: 4000;
+    background: #fff;
+}
+
+.fadein {
+    opacity: 1;
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+0%  { opacity: 0 }
+100% { opacity: 1 }
+}

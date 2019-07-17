@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Card, CardBody, CardImg } from 'reactstrap';
 class ProductBox extends Component {
     render() {
-        let { img, text, textCost ,id } = this.props;
+        let { img, text, textCost  } = this.props;
         return (
             <div className="col-md-3 col-12">
                 <div className="wrap-card-img my-5" >

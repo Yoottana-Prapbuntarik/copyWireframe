@@ -121,7 +121,7 @@ class NavigationBar extends Component {
                         </Collapse>
                     </Navbar>
                 </div > 
-                {this.state.isHover && <Cart />}
+                {this.state.isHover && <Cart isTrueHove={this.state.isHover} />}
             </React.Fragment>
         );
     }
