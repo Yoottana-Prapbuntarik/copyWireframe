@@ -4,7 +4,6 @@ body {
 }
 div {
     font-family: 'Prompt', sans-serif;
-
 }
 /* Navbar */
 .navbarLink{
@@ -142,19 +141,48 @@ svg{
 .Cart{
     border-radius: 3px;
     top: 75px;
-    right: 39px;
-    width: 350px;
+    right: 50px;
+    /* width: 350px; */
+    width: 700px;
     border: 1px solid rgb(0, 0, 0);
     position: absolute;
     z-index: 4000;
     background: #fff;
 }
 
-.fadein {
-    opacity: 1;
-    animation: fadeIn 1s forwards;
+@media (max-width: 767.98px) {
+    .Cart{
+        border-radius: 3px;
+        top: 400px;
+        left: 0;
+        width: 350px;
+        border: 1px solid rgb(0, 0, 0);
+        position: absolute;
+        z-index: 4000;
+        background: #fff;
+    }
 }
+@media (max-width: 576px) { 
+            .Cart{
+                border-radius: 3px;
+                top: 0px;
+                right: 1px;
+                width: 350px;
+                border: 1px solid rgb(0, 0, 0);
+                position: absolute;
+                z-index: 4000;
+                background: #fff;
+            }
+
+}
+
+
+
+.fadein{
+    animation: 5s fadeIn forwards;
+}
+
 @keyframes fadeIn {
 0%  { opacity: 0 }
-100% { opacity: 1 }
+100%{opacity: 1;}
 }

@@ -12,7 +12,8 @@ class NavigationBar extends Component {
             isOpen: false,
             scrolling: false,
             scrollYAxis: 30,
-            isHover: false
+            isHover: false,
+            currentTime: 3000
         }
         this.handleScroll = this.handleScroll.bind(this);
         this.closeNav = this.closeNav.bind(this);
@@ -55,9 +56,6 @@ class NavigationBar extends Component {
             isHover: !this.state.isHover
         });
     }
-
-
-
     render() {
         let alpha = {
             background: '#ffffff'
@@ -120,7 +118,7 @@ class NavigationBar extends Component {
                             </Nav>
                         </Collapse>
                     </Navbar>
-                </div > 
+                </div >
                 {this.state.isHover && <Cart isTrueHove={this.state.isHover} />}
             </React.Fragment>
         );
