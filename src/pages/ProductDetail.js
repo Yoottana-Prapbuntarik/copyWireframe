@@ -39,7 +39,7 @@ export default class ProductDetail extends Component {
                                     <div className="text-center">{this.state.amount > 0 ? this.state.amount : this.state.text}</div>
                                 </button>
                                 <br/>
-                                <NavLink className=" btn_2 mt-3" style={{textDecoration:'none'}} to="/">หยิบใส่ตระกร้า</NavLink>
+                                <NavLink className=" btn_2 mt-3" style={{textDecoration:'none'}} to="/Mycart">หยิบใส่ตระกร้า</NavLink>
                             </div>
                         </div>
                     </div>

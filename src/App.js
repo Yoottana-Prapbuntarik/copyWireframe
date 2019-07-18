@@ -7,6 +7,7 @@ import News from './pages/News';
 import Promotion from './pages/Promotion';
 import Footer from './components/Footer';
 import ProductDetail from './pages/ProductDetail';
+import Mycart from './pages/Mycart';
 import './Assets/css/styles.css';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
           <Route  path="/ProductDetail/" component={ProductDetail} />
           <Route  path="/News" component={News} />
           <Route path="/Promotion" component={Promotion} />
+          <Route path="/Mycart" component={Mycart}  />
           <Route component={Error} />
           </Switch>
           <Footer/>

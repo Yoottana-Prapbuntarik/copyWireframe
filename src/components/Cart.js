@@ -2,42 +2,56 @@ import React, { Component } from 'react'
 class Cart extends Component {
 
     render() {
-            return (
-                <div className="container Cart  fadein">
-                    <div className="row">
-                        <div className="col-12">
-                            <table class="table">
-                                <thead>
+        let { buttonName } = this.props;
+        return (
+            <div className="container">
+                <div className="row">
+                    <div className="col-12">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col-4">สินค้าของฉัน</th>
+                                    <th scope="col-4">จำนวน</th>
+                                    <th scope="col-4">ราคา</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                {buttonName ? (<React.Fragment>
                                     <tr>
-                                        <th scope="col">สินค้าของฉัน</th>
-                                        <th scope="col">จำนวน</th>
-                                        <th scope="col">ราคา</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Jacob</td>
-                                        <td>Thornton</td>
-                                        <td>@fat</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Larry</td>
-                                        <td>the Bird</td>
+                                        <td>
+                                            <button className="btn btn-secondary">{buttonName}</button>
+                                        </td>
+                                        <td>ราคารวม</td>
                                         <td>@twitter</td>
                                     </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                                </React.Fragment>
+                                ) :
+                                    (
+                                        <React.Fragment>
+                                            <tr>
+                                                <td></td>
+                                                <td>ราคารวม</td>
+                                                <td>500 บาท</td>
+                                            </tr>
+                                        </React.Fragment>
+                                    )}
 
+                            </tbody>
+                        </table>
                     </div>
-
                 </div>
-            )
+            </div>
+        )
     }
 }
 

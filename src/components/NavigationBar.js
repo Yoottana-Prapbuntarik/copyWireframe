@@ -3,9 +3,11 @@ import Cart from './Cart';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { faSearch, faShoppingCart } from '@fortawesome/fontawesome-free-solid';
 
 class NavigationBar extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -13,12 +15,12 @@ class NavigationBar extends Component {
             scrolling: false,
             scrollYAxis: 30,
             isHover: false,
-            currentTime: 3000
         }
         this.handleScroll = this.handleScroll.bind(this);
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
         this.handleMouseHover = this.handleMouseHover.bind(this);
+        this.handleMouseUp = this.handleMouseUp.bind(this);
     }
     toggle() {
         this.setState({
@@ -32,13 +34,10 @@ class NavigationBar extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
-
     }
-
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     }
-
     handleScroll() {
         if (window.scrollY === 0 && this.state.scrolling === true) {
             this.setState({ scrolling: false });
@@ -50,11 +49,15 @@ class NavigationBar extends Component {
             this.setState({ scrollYAxis: this.state.scrollYAxis * 0 + 10 });
         }
     }
-
     handleMouseHover() {
         this.setState({
-            isHover: !this.state.isHover
-        });
+            isHover: !this.state.isHover,
+        })
+    }
+    handleMouseUp() {
+        this.setState({
+            isHover: false,
+        })
     }
     render() {
         let alpha = {
@@ -76,6 +79,7 @@ class NavigationBar extends Component {
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <div style={{ marginLeft: '1%' }}>
                                 <Nav className="mr-auto" navbar>
+
                                     <NavItem className="navbarLink">
                                         <NavLink to="/" onClick={this.closeNav}>หน้าหลัก</NavLink>
                                     </NavItem>
@@ -88,9 +92,9 @@ class NavigationBar extends Component {
                                     <NavItem className="navbarLink">
                                         <NavLink to="/Promotion" onClick={this.closeNav}>สินค้าโปรโมชั่น</NavLink>
                                     </NavItem>
-
                                 </Nav>
                             </div>
+
                         </Collapse>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
@@ -108,9 +112,11 @@ class NavigationBar extends Component {
                                         <FontAwesomeIcon icon={faSearch} size="1x" color="#17a2b8" />
                                     </NavLink>
                                 </NavItem>
-                                <NavItem className="navbarLink"
-                                >
-                                    <NavLink onMouseEnter={this.handleMouseHover} onMouseLeave={this.handleMouseHover}>
+                                <NavItem  className="navbarLink">
+                                    <NavLink
+                                        to="/Mycart"
+                                        onMouseEnter={this.handleMouseHover}
+                                        onMouseLeave={this.handleMouseUp}>
                                         <FontAwesomeIcon icon={faShoppingCart}
                                             size="1x" color="#17a2b8" />
                                     </NavLink>
@@ -118,9 +124,10 @@ class NavigationBar extends Component {
                             </Nav>
                         </Collapse>
                     </Navbar>
-                </div >
-                {this.state.isHover && <Cart isTrueHove={this.state.isHover} />}
+                </div>
+                {this.state.isHover && <div className={this.state.isHover ? 'Cart  fadein' : ''}><Cart buttonName="ไปที่ตระกร้าสินค้า" /></div>}
             </React.Fragment>
+
         );
     }
 }

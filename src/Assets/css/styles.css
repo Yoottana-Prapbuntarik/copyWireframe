@@ -170,19 +170,25 @@ svg{
                 width: 350px;
                 border: 1px solid rgb(0, 0, 0);
                 position: absolute;
-                z-index: 4000;
-                background: #fff;
+                z-index: 9999;
+                background: #fff;  
             }
-
-}
-
-
-
+        }
 .fadein{
-    animation: 5s fadeIn forwards;
+    animation: 2s fadeIn forwards;
 }
-
+.fadeout{
+    animation: 5s fadeOut forwards;
+}
 @keyframes fadeIn {
-0%  { opacity: 0 }
+0%  { opacity: 0 ;}
 100%{opacity: 1;}
+}
+@keyframes fadeOut {
+    0%  { opacity: 0; }
+    50% {opacity: 1;}
+    100%{opacity: 0;}
+}
+.Mycart {
+    margin-top: 150px;
 }
