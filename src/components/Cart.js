@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 class Cart extends Component {
 
     render() {
@@ -17,7 +18,9 @@ class Cart extends Component {
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Mark</td>
+                                    <td>
+                                        
+                                    </td>
                                     <td>Otto</td>
                                     <td>@mdo</td>
                                 </tr>
@@ -29,7 +32,7 @@ class Cart extends Component {
                                 {buttonName ? (<React.Fragment>
                                     <tr>
                                         <td>
-                                            <button className="btn btn-secondary">{buttonName}</button>
+                                            <NavLink className="btn btn-secondary" to="/Mycart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
                                         <td>@twitter</td>

@@ -26,7 +26,7 @@ class Mycart extends Component {
                             <NavLink>ล้างตะกร้า</NavLink>
                         </div>
                         <div className="col-md-3   col-12">
-                        <button className="btn btn-secondary w-100">ดำเนินการต่อ</button>
+                        <NavLink className="btn btn-secondary w-100" to="/Address">ดำเนินการต่อ</NavLink>
                         </div>
                     </div>
                 </div>

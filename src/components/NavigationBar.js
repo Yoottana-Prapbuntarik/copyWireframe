@@ -127,7 +127,6 @@ class NavigationBar extends Component {
                 </div>
                 {this.state.isHover && <div className={this.state.isHover ? 'Cart  fadein' : ''}><Cart buttonName="ไปที่ตระกร้าสินค้า" /></div>}
             </React.Fragment>
-
         );
     }
 }
