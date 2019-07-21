@@ -38,7 +38,7 @@ class CardAddress extends Component {
                                     <label for="Address">ที่อยู่จัดส่ง</label>
                                     <input type="text" class="form-control" id="Address" placeholder="เลขที่ หมู่บ้าน คอนโด ชื่อถนน" />
                                 </div>
-                                <NavLink type="submit" className="btn btn-secondary w-100" to="/Confirm">ถัดไป</NavLink>
+                                <NavLink type="submit" className="btn btn-secondary w-100 my-5" to="/Confirm">ถัดไป</NavLink>
                             </form>
                     </div>
                 </div>
