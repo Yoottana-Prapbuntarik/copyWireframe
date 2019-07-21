@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom';
 class Booking extends Component {
     render() {
         return (
-            <div className="container ">
+            <div className="container">
                 <div className="Mycart">
                     <BarStatus status="Booking" />
                     <div className="row">
