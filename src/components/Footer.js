@@ -2,7 +2,7 @@ import React from 'react';
 export default function Footer() {
     return (
         <div>
-            <div className="container-fluid text-center" style={{ background: '#f3f3f3', padding: '5%',marginTop:'25%' }}>
+            <div className="container-fluid text-center" style={{ background: '#f3f3f3', padding: '5%', marginTop:'12%'}}>
                 <div className="row">
                     <div className="col-xl-6 col-12">
                         <b>&copy;2019&nbsp;Nattraphak.com</b>

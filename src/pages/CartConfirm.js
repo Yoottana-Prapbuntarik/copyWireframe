@@ -6,7 +6,7 @@ class CartConfirm extends Component {
         return (
             <div className="container">
                 <div className="Mycart">
-                            <BarStatus status="Confirm" />
+                    <BarStatus status="Confirm" />
                     <div className="row">
                         <div className="col-12 text-center">
                             <NavLink className="btn btn-secondary w-50" to="/Booking">ถัดไป</NavLink>
@@ -17,5 +17,4 @@ class CartConfirm extends Component {
         )
     }
 }
-
-export default CartConfirm
+export default CartConfirm;

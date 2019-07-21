@@ -30,7 +30,7 @@ class Promotion extends Component {
                             <h1>Product Name</h1>
                         </div>
                         <div className="col-xl-1 col-12 mt-5">
-                            <p style={{ fontSize: '15px', lineHeight: '2.5rem' }}> Sort By</p>
+                            <p className="productPharagraph"> Sort By</p>
                         </div>
                         <div className="col-xl-1 col-12  mt-5">
                             <div className="menudropdown ml-auto">

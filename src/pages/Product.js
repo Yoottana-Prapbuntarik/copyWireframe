@@ -13,26 +13,24 @@ class Product extends Component {
             dropdownOpen: false
         };
     }
-
     toggle() {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
         }));
     }
-
     render() {
-
         return (
             <div>
                 <div className="mt-5">
-                    <Banner link="Product" _padding="10" text="สินค้าทั้งหมด" img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                    <Banner link="Product" _padding="10" text="สินค้าทั้งหมด"
+                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-10 col-12  mt-5">
                                 <h1>Product Name</h1>
                             </div>
                             <div className="col-xl-1 col-12 mt-5">
-                                <p style={{ fontSize: '15px', lineHeight: '2.5rem' }}> Sort By</p>
+                                <p className="productPharagraph"> Sort By</p>
                             </div>
                             <div className="col-xl-1 col-12  mt-5">
                                 <div className="menudropdown ml-auto">

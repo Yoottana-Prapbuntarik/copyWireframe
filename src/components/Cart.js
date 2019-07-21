@@ -48,7 +48,6 @@ class Cart extends Component {
                                             </tr>
                                         </React.Fragment>
                                     )}
-
                             </tbody>
                         </table>
                     </div>
@@ -57,5 +56,4 @@ class Cart extends Component {
         )
     }
 }
-
-export default Cart
+export default Cart;

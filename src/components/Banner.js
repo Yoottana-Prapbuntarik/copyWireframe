@@ -1,21 +1,41 @@
-import React from 'react'
+import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-export default function Banner(props) {
-    return (
-        <NavLink  style={{textDecoration:'none'}} to={`/${props.link}`}>
+class Banner extends Component {
 
-            <div className="container " style={{
-                backgroundImage: `url(${props.img})`, maxWidth: '100%', backgroundAttachment: 'fixed',
-                backgroundPosition: 'center', opacity: 0.9,
-                backgroundSize: 'cover', padding: `${props._padding}%`, width: '100%', height: '100%'
-            }}>
-                <div className="row">
-                    <div className="col-12 text-center text-white">
-                        <h1 style={{ fontSize: '70px', color:`${props.color}` }}>{props.text}</h1>
+    render() {
+        let { img, _padding, color, text } = this.props;
+        
+        let { styleImageBackground, containerBaner, textStyle } = {};
+            styleImageBackground = {
+                backgroundImage: `url(${img})`,
+                maxWidth: '100%',
+                backgroundAttachment: 'fixed',
+                backgroundPosition: 'center',
+                opacity: 0.9,
+                backgroundSize: 'cover',
+                padding: `${_padding}%`,
+                width: '100%', 
+                height: '100%'
+            };
+            containerBaner = { textDecoration: 'none' };
+            textStyle = { fontSize: '70px', color: `${color}` };
+
+        return (
+            <div>
+                <NavLink style={containerBaner} to={`/${this.props.link}`}>
+                    <div className="container " style={styleImageBackground}>
+                        <div className="row">
+                            <div className="col-12 text-center text-white">
+                                <h1 style={textStyle}>{text}</h1>
+                            </div>
+                        </div>
+
                     </div>
-                </div>
-
+                </NavLink>
             </div>
-        </NavLink>
-    )
+        )
+    }
 }
+
+export default Banner
+
