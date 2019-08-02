@@ -23,7 +23,7 @@ class News extends Component {
         return (
             <div>
             <div className="mt-5">
-                <Banner link="News" _padding="10"  text="สินค้าใหม่" img="https://images.unsplash.com/photo-1513117070-47df6136fd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" />
+                <Banner link="News"_padding="10"  text="สินค้าใหม่" img="https://images.unsplash.com/photo-1513117070-47df6136fd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" />
                 <div className="container">
                     <div className="row">
                         <div className="col-xl-10 col-12  mt-5">

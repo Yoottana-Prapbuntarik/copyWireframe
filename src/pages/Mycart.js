@@ -5,19 +5,18 @@ class Mycart extends Component {
     render() {
         return (
             <div>
-
                 <div className="container Mycart mb-5">
                     <div className="row">
                         <div className="col-12">
                             <h1 className="header">
                                 ตระกร้าของฉัน
-                    </h1>
+                        </h1>
                         </div>
                     </div>
                 </div>
                 <Cart />
                 <hr width="58%"/>
-                <div className="container  mt-5 ">
+                <div className="container">
                     <div className="row">
                         <div className="col-md-6 py-3 col-12">
                             <NavLink to="/Product">เลือกซื้อสินค้าต่อ</NavLink>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 class Cart extends Component {
 
     render() {
@@ -19,34 +19,26 @@ class Cart extends Component {
                             <tbody>
                                 <tr>
                                     <td>
-                                        
+                                        รูปภาพ
                                     </td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
+                                    <td>1</td>
+                                    <td>500บาท</td>
                                 </tr>
-                                <tr>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                {buttonName ? (<React.Fragment>
+                                {buttonName ? (
                                     <tr>
                                         <td>
                                             <NavLink className="btn btn-secondary" to="/Mycart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
-                                        <td>@twitter</td>
+                                        <td>500 บาท</td>
                                     </tr>
-                                </React.Fragment>
                                 ) :
                                     (
-                                        <React.Fragment>
-                                            <tr>
-                                                <td></td>
-                                                <td>ราคารวม</td>
-                                                <td>500 บาท</td>
-                                            </tr>
-                                        </React.Fragment>
+                                        <tr>
+                                            <td></td>
+                                            <td>ราคารวม</td>
+                                            <td>500 บาท</td>
+                                        </tr>
                                     )}
                             </tbody>
                         </table>

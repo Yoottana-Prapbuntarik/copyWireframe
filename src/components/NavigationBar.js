@@ -13,10 +13,8 @@ class NavigationBar extends Component {
         this.state = {
             isOpen: false,
             scrolling: false,
-            scrollYAxis: 30,
             isHover: false,
         }
-        this.handleScroll = this.handleScroll.bind(this);
         this.closeNav = this.closeNav.bind(this);
         this.toggle = this.toggle.bind(this);
         this.handleMouseHover = this.handleMouseHover.bind(this);
@@ -32,23 +30,6 @@ class NavigationBar extends Component {
             isOpen: false,
         })
     }
-    componentDidMount() {
-        window.addEventListener('scroll', this.handleScroll);
-    }
-    componentWillUnmount() {
-        window.removeEventListener('scroll', this.handleScroll);
-    }
-    handleScroll() {
-        if (window.scrollY === 0 && this.state.scrolling === true) {
-            this.setState({ scrolling: false });
-            this.setState({ scrollYAxis: this.state.scrollYAxis + 30 });
-
-        }
-        else if (window.scrollY !== 0 && this.state.scrolling !== true) {
-            this.setState({ scrolling: true });
-            this.setState({ scrollYAxis: this.state.scrollYAxis * 0 + 10 });
-        }
-    }
     handleMouseHover() {
         this.setState({
             isHover: !this.state.isHover,
@@ -63,9 +44,9 @@ class NavigationBar extends Component {
         let alpha = {
             background: '#ffffff'
             , color: '#000000',
-            paddingTop: `${this.state.scrollYAxis}px`,
-            paddingBottom: `${this.state.scrollYAxis}px`
-            , transition: '.1s',
+            paddingTop: `30px`,
+            paddingBottom: `30px`,
+            transition: '.1s',
             borderBottom: "1.2px solid rgba(0,0,0,0.1)"
         }
         return (

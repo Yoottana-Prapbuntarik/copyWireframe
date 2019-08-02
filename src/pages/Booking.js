@@ -6,7 +6,7 @@ class Booking extends Component {
         return (
             <div className="container">
                 <div className="Mycart">
-                    <BarStatus status="Booking" />
+                    <BarStatus status="Booking"/>
                     <div className="row">
                         <div className="col-12 text-center">
                             <NavLink type="submit" className="btn btn-secondary w-50" to="/Member" >ถัดไป</NavLink>

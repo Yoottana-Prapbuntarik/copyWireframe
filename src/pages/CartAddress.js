@@ -5,7 +5,7 @@ class CardAddress extends Component {
     render() {
         return (
             <div className="Mycart">
-                <BarStatus status="Adress" />
+                <BarStatus status="Adress"/>
                 <div className="container">
                         <div className=" mx-auto col-md-6">
                             <form className="mt-3">

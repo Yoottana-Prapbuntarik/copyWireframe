@@ -23,7 +23,7 @@ class Banner extends Component {
         return (
             <div>
                 <NavLink style={containerBaner} to={`/${this.props.link}`}>
-                    <div className="container " style={styleImageBackground}>
+                    <div className="container" style={styleImageBackground}>
                         <div className="row">
                             <div className="col-12 text-center text-white">
                                 <h1 style={textStyle}>{text}</h1>

@@ -7,7 +7,6 @@ import OwlCarousel from 'react-owl-carousel';
 class Product extends Component {
     constructor(props) {
         super(props);
-
         this.toggle = this.toggle.bind(this);
         this.state = {
             dropdownOpen: false
@@ -22,8 +21,8 @@ class Product extends Component {
         return (
             <div>
                 <div className="mt-5">
-                    <Banner link="Product" _padding="10" text="สินค้าทั้งหมด"
-                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                    <Banner link="Product"_padding="10" text="สินค้าทั้งหมด"
+                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-10 col-12  mt-5">
@@ -81,7 +80,6 @@ class Product extends Component {
                                 <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
                                 <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
                             </div>
-
                         </OwlCarousel >
                     </div >
                 </div >
@@ -89,5 +87,4 @@ class Product extends Component {
         )
     }
 }
-
 export default Product
