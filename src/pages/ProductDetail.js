@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 class ProductDetail extends Component {
 
@@ -7,9 +8,19 @@ class ProductDetail extends Component {
         super(props);
         this.state = {
             dropdownOpen: false,
-            amount: 1
+            amount: 1,
+            data: {}
         }
         this.toggle = this.toggle.bind(this);
+    }
+    componentDidMount() {
+        let numberItems = this.props.match.params.id;
+        axios.get('http://www.mocky.io/v2/5d4595b0300000e063c5c8ce').then((response) => {
+            this.setState({
+                data: response.data.items[[numberItems]]
+            })
+        })
+
     }
     toggle() {
         this.setState(prevState => ({ dropdownOpen: !prevState.dropdownOpen }));
@@ -18,18 +29,18 @@ class ProductDetail extends Component {
         this.setState({ amount: parseInt(e.target.value) })
     }
     render() {
-        console.log(this.state.amount)
+        let { data } = this.state;
         return (
             <div className="container  ProductDetail">
                 <div className="row">
                     <div className="col-md-6 box-img">
-                        <img className="img-responsive" src="https://www.high-everydaycouture.com/media/catalog/product/S/0/S0121719564-1_999.png"
+                        <img className="img-responsive" src={data.img}
                             alt="img product" />
                     </div>
                     <div className="col-md-6">
                         <div className="container">
-                            <h3><b>Pinstrpe High Waist Shirt <br />900 บาท
-                            &nbsp;
+                            <h3>{data.name}<b><br />{data.cost}
+                                &nbsp;
                             <s className="text-secondary">1280 บาท</s>
                             </b>
                             </h3>
