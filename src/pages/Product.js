@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import axios from 'axios';
 import Banner from '../components/Banner';
+import Shirt from '../components/category/Shirt';
+import Plant from '../components/category/Plant';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
-import ProductBox from '../components/ProductBox';
 import OwlCarousel from 'react-owl-carousel';
 
 class Product extends Component {
@@ -9,7 +11,8 @@ class Product extends Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.state = {
-            dropdownOpen: false
+            dropdownOpen: false,
+            data: []
         };
     }
     toggle() {
@@ -17,12 +20,22 @@ class Product extends Component {
             dropdownOpen: !prevState.dropdownOpen
         }));
     }
+    componentDidMount() {
+        axios.get('https://www.mocky.io/v2/5d45bb3d300000e762c5c8f2').then((response) => {
+            this.setState({
+                data: response.data.items
+            })
+        })
+
+    }
     render() {
         return (
             <div>
                 <div className="mt-5">
-                    <Banner link="Product"_padding="10" text="สินค้าทั้งหมด"
-                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"/>
+                    {console.log(this.state.data)
+                    }
+                    <Banner link="Product" _padding="10" text="สินค้าทั้งหมด"
+                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
                     <div className="container">
                         <div className="row">
                             <div className="col-xl-10 col-12  mt-5">
@@ -35,12 +48,11 @@ class Product extends Component {
                                 <div className="menudropdown ml-auto">
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                         <DropdownToggle caret>
-                                            Featured
+                                            ชนิด
                                         </DropdownToggle>
                                         <DropdownMenu>
                                             <DropdownItem>เสื้อ</DropdownItem>
-                                            <DropdownItem>ชุดกระโปรง</DropdownItem>
-                                            <DropdownItem>รองเท้า</DropdownItem>
+                                            <DropdownItem>กระโปรง</DropdownItem>
                                         </DropdownMenu>
                                     </Dropdown>
                                 </div>
@@ -53,32 +65,10 @@ class Product extends Component {
                             nav
                             margin={1} items={1}>
                             <div className="row item">
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                                <Shirt/>
                             </div>
                             <div className="row item">
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1516478177764-9fe5bd7e9717?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
-                                <ProductBox className="item" text="midi off shoulder Ruched dress" textCost="500 บาท" img="https://images.unsplash.com/photo-1549897380-2772a6d7179f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
+                                <Plant/>
                             </div>
                         </OwlCarousel >
                     </div >

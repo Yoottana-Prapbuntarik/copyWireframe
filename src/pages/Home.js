@@ -11,7 +11,7 @@ class Home extends Component {
         }
     }
     componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d4595b0300000e063c5c8ce').then((response) => {
+        axios.get('https://www.mocky.io/v2/5d45bb3d300000e762c5c8f2').then((response) => {
             this.setState({
                 data: response.data.items
             })
@@ -39,8 +39,6 @@ class Home extends Component {
                                 return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={key} />
                             })
                         }
-
-
                     </div>
 
 
