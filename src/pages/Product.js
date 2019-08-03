@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Banner from '../components/Banner';
-import Shirt from '../components/category/Shirt';
-import Plant from '../components/category/Plant';
+import Shirt from '../components/Shirt';
+import Plant from '../components/Plant';
 import { Dropdown, DropdownItem, DropdownToggle, DropdownMenu } from 'reactstrap';
 import OwlCarousel from 'react-owl-carousel';
 
@@ -12,21 +11,12 @@ class Product extends Component {
         this.toggle = this.toggle.bind(this);
         this.state = {
             dropdownOpen: false,
-            data: []
         };
     }
     toggle() {
         this.setState(prevState => ({
             dropdownOpen: !prevState.dropdownOpen
         }));
-    }
-    componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d45bb3d300000e762c5c8f2').then((response) => {
-            this.setState({
-                data: response.data.items
-            })
-        })
-
     }
     render() {
         return (

@@ -11,7 +11,7 @@ class Home extends Component {
         }
     }
     componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d45bb3d300000e762c5c8f2').then((response) => {
+        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
             this.setState({
                 data: response.data.items
             })
@@ -35,8 +35,8 @@ class Home extends Component {
                 <div className="container">
                     <div className="row">
                         {
-                            this.state.data.map((datas , key) => {
-                                return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={key} />
+                            this.state.data.map((datas ) => {
+                                return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={datas.id} />
                             })
                         }
                     </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import Shirt from '../components/category/Shirt';
-import Plant from '../components/category/Plant';
+import Shirt from '../components/Shirt';
+import Plant from '../components/Plant';
 import Banner from '../components/Banner';
 import { Dropdown, DropdownMenu, DropdownToggle, DropdownItem } from 'reactstrap';
 import OwlCarousel from 'react-owl-carousel';

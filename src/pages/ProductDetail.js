@@ -15,9 +15,9 @@ class ProductDetail extends Component {
     }
     componentDidMount() {
         let numberItems = this.props.match.params.id;
-        axios.get('https://www.mocky.io/v2/5d4595b0300000e063c5c8ce').then((response) => {
+        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
             this.setState({
-                data: response.data.items[[numberItems]]
+                data: response.data.items[[numberItems - 1]]
             })
         })
 

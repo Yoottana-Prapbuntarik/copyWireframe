@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ProductBox from '../ProductBox';
+import ProductBox from './ProductBox';
 import axios from 'axios';
 class Shirt extends Component {
     constructor(props){
@@ -9,7 +9,7 @@ class Shirt extends Component {
         }
     }
     componentDidMount() {
-        axios.get('https://www.mocky.io/v2/5d45bb3d300000e762c5c8f2').then((response) => {
+        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
             this.setState({
                 data: response.data.shirt
             })
@@ -21,7 +21,7 @@ class Shirt extends Component {
             <div className="container">
                 <div className="row">
                     {
-                        this.state.data.map((datas) => { return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={datas.key} /> })
+                        this.state.data.map((datas) => { return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={datas.id} /> })
                     }
                 </div>
             </div>
