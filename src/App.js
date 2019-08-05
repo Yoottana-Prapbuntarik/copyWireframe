@@ -24,26 +24,28 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-         {/* It's app js used it for route path */}
+          {/* It's app js used it for route path */}
           <NavigationBar />
           <Switch>
-          <Route exact path="/" component={Home} />
-          <Route  path="/Product" component={Product} />
-          <Route  path="/ProductDetail/:id" component={ProductDetail} />
-          <Route  path="/News" component={News} />
-          <Route path="/Promotion" component={Promotion} />
-          <Route path="/Mycart" component={Mycart}  />
-          <Route path="/Address" component={CartAddress}/>
-          <Route path="/Confirm" component={CartConfirm}/>
-          <Route path="/Booking" component={Booking}/>
-          <Route path="/Member" component={Member}/>
-          <Route path="/Orders" component={Orders}/>
-          <Route path="/About" component={About}/>
-          <Route path="/Confirmpayment" component={ConfirmPayment}/>
-          <Route path="/Myaddress" component={MyAddress}/>
-          <Route component={Error} />
+            <Route exact path="/" component={Home} />
+            <Route path="/Product" component={Product} />
+            <Route path="/ProductDetail/:id" component={ProductDetail} />
+            <Route path="/News" component={News} />
+            <Route path="/Promotion" component={Promotion} />
+            <Route path="/Mycart" component={Mycart} />
+            <Route path="/Address" component={CartAddress} />
+            <Route path="/Confirm" component={CartConfirm} />
+            <Route path="/Booking" component={Booking} />
+            <Route path="/Member" component={Member} />
+            <Route path="/Orders" component={Orders} />
+            <Route path="/About" component={About} />
+            <Route path="/Confirmpayment" component={ConfirmPayment} />
+            <Route path="/Myaddress" component={MyAddress} />
+            <Route component={Error} />
           </Switch>
-          <Footer/>
+          <div className="container Footer">
+            <Footer />
+          </div>
         </div>
       </BrowserRouter>
     )

@@ -94,7 +94,9 @@ svg{
     background-color: #000;
     border-color: #000;
 }
-
+.owl-theme{
+margin-bottom: 100px;
+}
 /*OwlNav*/
 .owl-nav{
     text-align: center;
@@ -212,7 +214,17 @@ svg{
     font-size: 20px;
 } 
 .Footer {
+    position: absolute;
+    background-size: cover;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    clear: both;
+    position: relative;
+    margin-top: 640px;
+    padding-top:50px;
+    padding-bottom: 50px;
+    text-align: center;
+    max-width: 100% !important;
     background: #f3f3f3;
-    padding:5%;
-    margin-top: 30%; 
 }

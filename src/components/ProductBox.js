@@ -5,7 +5,7 @@ class ProductBox extends Component {
     render() {
         let { img, text, textCost , id } = this.props;
         return (
-            <div className="col-md-3 col-12">
+            <div className="col-md-3 col-12 card">
                 <div className="wrap-card-img my-5" >
                     <div className="shadows">
                         <Card>

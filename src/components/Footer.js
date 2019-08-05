@@ -8,29 +8,27 @@ class Footer extends Component {
     render() {
         return (
             <div>
-                <div className="container-fluid text-center Footer">
-                    <div className="row">
-                        <div className="col-xl-6 col-12">
-                            <b>&copy;2019&nbsp;Nattraphak.com</b>
-                        </div>
-                        <div className="col-xl-6 col-12">
-                            #NattraphakPhatai &nbsp;
+                <div className="row">
+                    <div className="col-xl-6 col-12">
+                        <b>&copy;2019&nbsp;Nattraphak.com</b>
+                    </div>
+                    <div className="col-xl-6 col-12">
+                        #NattraphakPhatai &nbsp;
                                 <img src={facebook}
-                                alt="social"
-                                width="25"/>
-                            &nbsp;
+                            alt="social"
+                            width="25" />
+                        &nbsp;
                                 <img src={ig}
-                                alt="social"
-                                width="25"/>
-                            &nbsp;
+                            alt="social"
+                            width="25" />
+                        &nbsp;
                                 <img src={line}
-                                alt="social"
-                                width="25"/>
-                            &nbsp;
+                            alt="social"
+                            width="25" />
+                        &nbsp;
                                 <img src={twitter}
-                                alt="social"
-                                width="25"/>
-                        </div>
+                            alt="social"
+                            width="25" />
                     </div>
                 </div>
             </div >

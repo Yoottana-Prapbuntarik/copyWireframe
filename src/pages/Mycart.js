@@ -5,7 +5,7 @@ class Mycart extends Component {
     render() {
         return (
             <div>
-                <div className="container Mycart mb-5">
+                <div className="container Mycart mt-5">
                     <div className="row">
                         <div className="col-12">
                             <h1 className="header">
