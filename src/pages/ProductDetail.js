@@ -59,7 +59,7 @@ class ProductDetail extends Component {
                                 </DropdownMenu>
                             </Dropdown>
                             <br />
-                            <NavLink className="buttonAddCart mt-3" to="/Mycart">หยิบใส่ตระกร้า</NavLink>
+                            <NavLink className="buttonAddCart mt-3" to={`/Mycart/${this.props.match.params.id}`}>หยิบใส่ตระกร้า</NavLink>
                         </div>
                     </div>
                 </div>

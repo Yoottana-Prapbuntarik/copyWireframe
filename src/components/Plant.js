@@ -21,7 +21,7 @@ class Plant extends Component {
             <div className="container">
                 <div className="row">
                     {
-                        this.state.data.map((datas) => { return <ProductBox text={datas.name} textCost={datas.cost} img={datas.img} id={datas.id} /> })
+                        this.state.data.map((datas , key) => { return <ProductBox key={key} text={datas.name} textCost={datas.cost} img={datas.img} id={datas.id} /> })
                     }
                 </div>
             </div>

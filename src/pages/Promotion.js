@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import Shirt from '../components/Shirt';
 import Plant from '../components/Plant';
 import Banner from '../components/Banner';
@@ -24,16 +24,17 @@ class Promotion extends Component {
         return (
             <div>
                 <div className="mt-5">
-                    <Banner link="Promotion" _padding="15" color="black" text="โปรโมชัน" img="https://images.unsplash.com/photo-1531303435785-3853ba035cda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-                    <div className="container">
+                    <Banner link="Promotion" _padding="10" color="white" text="โปรโมชัน" 
+                    img="https://images.unsplash.com/photo-1532795986-dbef1643a596?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1267&q=80" />
+                    <div className="container mt-5">
                         <div className="row">
-                            <div className="col-xl-10 col-12  mt-5">
+                            <div className="col-xl-10 col-12  mt-3">
                                 <h1>Product Name</h1>
                             </div>
-                            <div className="col-xl-1 col-12 mt-5">
+                            <div className="col-xl-1 col-12 mt-3">
                                 <p className="productPharagraph"> Sort By</p>
                             </div>
-                            <div className="col-xl-1 col-12  mt-5">
+                            <div className="col-xl-1 col-12  mt-3">
                                 <div className="menudropdown ml-auto">
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                         <DropdownToggle caret>
@@ -67,5 +68,4 @@ class Promotion extends Component {
         )
     }
 }
-
-export default Promotion
+export default Promotion;

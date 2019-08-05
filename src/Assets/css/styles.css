@@ -19,6 +19,7 @@ div , * {
     9.  member
     10. confirmPage
     11. Footer
+    12. Booking
 */
 
 /* Navbar */
@@ -194,15 +195,15 @@ margin-bottom: 100px;
 }
 /*member*/
 .memberImg {
-    width: 30px; 
-    height: 30px; 
+    width: 35px; 
+    height: 35px; 
     border-radius: 50%; 
 }
 .member{
     margin-top: 150px;
     width:100%;
 }
-@media (min-width: 767px) {
+@media (min-width: 970px) {
 .sidebar{
     background: rgb(255, 255, 255);
     padding-top: 30px;
@@ -213,6 +214,8 @@ margin-bottom: 100px;
     color: #b1b1b1;
     font-size: 20px;
 } 
+
+/*Footer*/
 .Footer {
     position: absolute;
     background-size: cover;
@@ -228,3 +231,18 @@ margin-bottom: 100px;
     max-width: 100% !important;
     background: #f3f3f3;
 }
+/* Booking */
+.Booking {
+    background: #cecece;
+    height: 480px;
+}
+.Booking h1 {
+    padding-top: 5em;
+}
+.buttonBooking{
+    padding-top: 6em;
+} 
+.buttonBooking a{
+    margin-top: 2.5em;
+    padding: .7em
+} 

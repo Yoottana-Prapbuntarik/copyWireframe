@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import BarStatus from '../components/BarStatus';
 import Cart from '../components/Cart';
 class CartConfirm extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {}
+        }
+    }
+    componentDidMount() {
+        let numberItems = this.props.match.params.id;
+        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
+            this.setState({
+                data: response.data.items[numberItems - 1]
+            })
+        })
+    }
     render() {
+        let { data } = this.state;
         return (
             <div className="container ">
                 <div className="Mycart row">
@@ -23,7 +40,6 @@ class CartConfirm extends Component {
                         <h5>ชื่อ - นามสกุล ผู้รับ</h5>
                         <h5>ที่อยู่ผู้รับ</h5>
                         <h5>เบอร์โทรผู้รับ</h5>
-
                     </div>
                     <div className="col-8 ">
                         <p>
@@ -44,9 +60,9 @@ class CartConfirm extends Component {
                     <div className="col-6 text-right">
                         <NavLink className="text-primary" to="#"><b>แก้ไขสินค้า</b></NavLink>
                     </div>
-                    <Cart/>
+                    <Cart dataProduct={data} />
                     <div className="col-12 text-right">
-                        <NavLink className="btn btn-secondary w-50" to="/Booking">ถัดไป</NavLink>
+                        <NavLink className="btn btn-secondary w-50" to={`/Booking/${this.props.match.params.id}`}>ถัดไป</NavLink>
                     </div>
                 </div>
             </div>

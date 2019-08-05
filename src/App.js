@@ -32,10 +32,10 @@ class App extends Component {
             <Route path="/ProductDetail/:id" component={ProductDetail} />
             <Route path="/News" component={News} />
             <Route path="/Promotion" component={Promotion} />
-            <Route path="/Mycart" component={Mycart} />
-            <Route path="/Address" component={CartAddress} />
-            <Route path="/Confirm" component={CartConfirm} />
-            <Route path="/Booking" component={Booking} />
+            <Route path="/Mycart/:id" component={Mycart} />
+            <Route path="/Address/:id" component={CartAddress} />
+            <Route path="/Confirm/:id" component={CartConfirm} />
+            <Route path="/Booking/:id" component={Booking} />
             <Route path="/Member" component={Member} />
             <Route path="/Orders" component={Orders} />
             <Route path="/About" component={About} />

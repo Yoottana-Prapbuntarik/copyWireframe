@@ -24,16 +24,16 @@ class News extends Component {
         return (
             <div>
                 <div className="mt-5">
-                    <Banner link="News" _padding="10" text="สินค้าใหม่" img="https://images.unsplash.com/photo-1513117070-47df6136fd4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80" />
-                    <div className="container">
+                    <Banner link="News" _padding="10" color="white" text="สินค้าใหม่" img="https://images.unsplash.com/photo-1530558215369-ba361d8734f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" />
+                    <div className="container mt-5">
                         <div className="row">
-                            <div className="col-xl-10 col-12  mt-5">
+                            <div className="col-xl-10 col-12  mt-3">
                                 <h1>Product Name</h1>
                             </div>
-                            <div className="col-xl-1 col-12 mt-5">
+                            <div className="col-xl-1 col-12 mt-3">
                                 <p className="productPharagraph"> Sort By</p>
                             </div>
-                            <div className="col-xl-1 col-12  mt-5">
+                            <div className="col-xl-1 col-12  mt-3">
                                 <div className="menudropdown ml-auto">
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                         <DropdownToggle caret>

@@ -3,12 +3,12 @@ import { NavLink } from 'react-router-dom';
 class Cart extends Component {
 
     render() {
-        let { buttonName } = this.props;
+        let { buttonName , dataProduct } = this.props;
         return (
             <div className="container">
                 <div className="row">
                     <div className="col-12">
-                        <table class="table">
+                        <table className="table">
                             <thead>
                                 <tr>
                                     <th scope="col-4">สินค้าของฉัน</th>
@@ -19,10 +19,10 @@ class Cart extends Component {
                             <tbody>
                                 <tr>
                                     <td>
-                                        รูปภาพ
+                                    <img src={dataProduct.img} width="200px" alt="img-product"/>
                                     </td>
                                     <td>1</td>
-                                    <td>500บาท</td>
+                                    <td>{dataProduct.cost}</td>
                                 </tr>
                                 {buttonName ? (
                                     <tr>
@@ -30,14 +30,14 @@ class Cart extends Component {
                                             <NavLink className="btn btn-secondary" to="/Mycart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
-                                        <td>500 บาท</td>
+                                        <td>{dataProduct.cost} บาท</td>
                                     </tr>
                                 ) :
                                     (
                                         <tr>
                                             <td></td>
                                             <td>ราคารวม</td>
-                                            <td>500 บาท</td>
+                                            <td>{dataProduct.cost} บาท</td>
                                         </tr>
                                     )}
                             </tbody>

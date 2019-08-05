@@ -23,16 +23,16 @@ class Product extends Component {
             <div>
                 <div className="mt-5">
                     <Banner link="Product" _padding="10" text="สินค้าทั้งหมด"
-                        img="https://images.unsplash.com/photo-1514866903401-53c470bfaf85?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
-                    <div className="container">
+                        img="https://images.unsplash.com/photo-1542060748-10c28b62716f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" />
+                    <div className="container mt-5">
                         <div className="row">
-                            <div className="col-xl-10 col-12  mt-5">
+                            <div className="col-xl-10 col-12  mt-3">
                                 <h1>Product Name</h1>
                             </div>
-                            <div className="col-xl-1 col-12 mt-5">
+                            <div className="col-xl-1 col-12 mt-3">
                                 <p className="productPharagraph"> Sort By</p>
                             </div>
-                            <div className="col-xl-1 col-12  mt-5">
+                            <div className="col-xl-1 col-12  mt-3">
                                 <div className="menudropdown ml-auto">
                                     <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                         <DropdownToggle caret>
@@ -53,10 +53,10 @@ class Product extends Component {
                             nav
                             margin={1} items={1}>
                             <div className="row item">
-                                <Shirt/>
+                                <Shirt />
                             </div>
                             <div className="row item">
-                                <Plant/>
+                                <Plant />
                             </div>
                         </OwlCarousel >
                     </div >
@@ -65,4 +65,4 @@ class Product extends Component {
         )
     }
 }
-export default Product
+export default Product;
