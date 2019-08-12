@@ -19,10 +19,10 @@ class Cart extends Component {
                             <tbody>
                                 <tr>
                                     <td>
-                                    <img src={dataProduct.img} width="200px" alt="img-product"/>
+                                    <img src={ dataProduct && dataProduct.img} width="150px" alt="img-product"/>
                                     </td>
                                     <td>1</td>
-                                    <td>{dataProduct.cost}</td>
+                                    <td>{ dataProduct && dataProduct.cost}</td>
                                 </tr>
                                 {buttonName ? (
                                     <tr>
@@ -30,14 +30,14 @@ class Cart extends Component {
                                             <NavLink className="btn btn-secondary" to="/Mycart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
-                                        <td>{dataProduct.cost} บาท</td>
+                                        <td>{ dataProduct && dataProduct.cost} บาท</td>
                                     </tr>
                                 ) :
                                     (
                                         <tr>
                                             <td></td>
                                             <td>ราคารวม</td>
-                                            <td>{dataProduct.cost} บาท</td>
+                                            <td>{ dataProduct && dataProduct.cost} บาท</td>
                                         </tr>
                                     )}
                             </tbody>

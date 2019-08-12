@@ -7,10 +7,10 @@ class Booking extends Component {
             <div className="container">
                 <div className="Mycart row">
                     <BarStatus status="Booking" />
-                    <div className="col-6 mt-5 Booking">
+                    <div className="col-md-6 mt-5 Booking">
                         <h1 className="text-center mt-auto mb-auto"><b>เลขที่บัญชี</b></h1>
                     </div>
-                    <div className="col-6 buttonBooking text-center">
+                    <div className="col-md-6 buttonBooking text-center">
                         <h1><b>สั่งซื้อเรียบร้อยแล้ว (รอชำระเงิน)</b></h1>
                         <h5><b>จำนวนเงินที่ต้องชำระ</b></h5>
                         <h3><b>900 บาท</b></h3>
