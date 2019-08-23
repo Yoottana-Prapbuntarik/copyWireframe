@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
 import axios from 'axios';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 class ProductDetail extends Component {
@@ -12,6 +11,7 @@ class ProductDetail extends Component {
             data: {}
         }
         this.toggle = this.toggle.bind(this);
+        this.addItemToCart = this.addItemToCart.bind(this);
     }
     componentDidMount() {
         let numberItems = this.props.match.params.id;
@@ -20,8 +20,20 @@ class ProductDetail extends Component {
                 data: response.data.items[[numberItems - 1]]
             })
         })
-
     }
+    addItemToCart() {
+        let dataToDb = {
+            name: this.state.data.name,
+            img: this.state.data.img,
+            amount: this.state.amount,
+            cost: this.state.data.cost * this.state.amount
+        }
+        axios.post('https://shop-api-services.herokuapp.com/Cart', dataToDb)
+        this.setState({
+            amount: 1
+        })
+    }
+
     toggle() {
         this.setState(prevState => ({ dropdownOpen: !prevState.dropdownOpen }));
     }
@@ -37,14 +49,14 @@ class ProductDetail extends Component {
                         <img className="img-responsive" src={data.img}
                             alt="img product" />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 mt-5">
                         <div className="container">
-                            <h3>{data.name}<b><br />{data.cost}
-                                &nbsp;
-                            <s className="text-secondary">1280 บาท</s>
+                            <h3 className="mt-5">{data.name}
+                            <b>
+                            <br />{data.cost}&nbsp;<s className="text-secondary">1280 บาท</s>
                             </b>
                             </h3>
-                            <br />
+                            <br/>
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                 <DropdownToggle className="buttonAmount">
                                     {this.state.amount}
@@ -59,7 +71,7 @@ class ProductDetail extends Component {
                                 </DropdownMenu>
                             </Dropdown>
                             <br />
-                            <NavLink className="buttonAddCart mt-3" to={`/Mycart/${this.props.match.params.id}`}>หยิบใส่ตระกร้า</NavLink>
+                            <a className="buttonAddCart mt-3" href="/Mycart" onClick={this.addItemToCart}>หยิบใส่ตระกร้า</a>
                         </div>
                     </div>
                 </div>

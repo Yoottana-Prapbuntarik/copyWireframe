@@ -12,10 +12,9 @@ class CartConfirm extends Component {
         }
     }
     componentDidMount() {
-        let numberItems = this.props.match.params.id;
-        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
+        axios.get('https://shop-api-services.herokuapp.com/Cart').then((response) => {
             this.setState({
-                data: response.data.items[numberItems - 1]
+                data: response.data[0]
             })
         })
     }
@@ -51,18 +50,16 @@ class CartConfirm extends Component {
                         <p>
                             0823456789
                         </p>
-
                     </div>
-
                     <div className="col-6 text-left">
                         <h5><b>รายการสินค้า</b></h5>
                     </div>
                     <div className="col-6 text-right">
                         <NavLink className="text-primary" to="#"><b>แก้ไขสินค้า</b></NavLink>
                     </div>
-                    <Cart dataProduct={data} />
+                    <Cart dataProduct={data} id={this.props.match.params.id} />
                     <div className="col-12 text-right">
-                        <NavLink className="btn btn-secondary w-50" to={`/Booking/${this.props.match.params.id}`}>ถัดไป</NavLink>
+                        <NavLink className="btn btn-secondary w-50" to={`/Booking`}>ถัดไป</NavLink>
                     </div>
                 </div>
             </div>

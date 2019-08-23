@@ -37,7 +37,7 @@ class Sidebar extends React.Component {
                             </NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink tag={Link} to={'/logout'}>
+                                <NavLink  tag={Link} to={'/'} onClick={(e) => alert('logout successful')}>
                                     <FontAwesomeIcon icon={faSignOutAlt} className="mr-1" />ออกจากระบบ
                             </NavLink>
                             </NavItem>

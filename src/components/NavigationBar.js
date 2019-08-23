@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Cart from './Cart';
+import Mycart from '../pages/Mycart';
 import { Collapse, Navbar, NavbarToggler, Nav, NavItem } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -75,7 +75,6 @@ class NavigationBar extends Component {
                                     </NavItem>
                                 </Nav>
                             </div>
-
                         </Collapse>
                         <Collapse isOpen={this.state.isOpen} navbar>
                             <Nav className="ml-auto" navbar>
@@ -110,7 +109,7 @@ class NavigationBar extends Component {
                         </Collapse>
                     </Navbar>
                 </div>
-                {this.state.isHover && <div className={this.state.isHover ? ('Cart  fadein') : ('')}><Cart buttonName="ไปที่ตระกร้าสินค้า" /></div>}
+                {this.state.isHover && <div className={this.state.isHover ? ('Cart  fadein') : ('')}><Mycart buttonName="ไปที่ตระกร้าสินค้า" /></div>}
             </React.Fragment>
         );
     }

@@ -38,7 +38,7 @@ class CardAddress extends Component {
                                     <label htmlFor="tel">เบอร์โทรศัพท์</label>
                                     <input type="text" className="form-control" id="tel" placeholder="เบอร์โทรศัพท์"/>
                                 </div>
-                                <NavLink type="submit" className="btn btn-secondary w-100 my-5" to={`/Confirm/${this.props.match.params.id}`}>ถัดไป</NavLink>
+                                <NavLink type="submit" className="btn btn-secondary w-100 my-5" to={`/Confirm`}>ถัดไป</NavLink>
                             </form>
                     </div>
                 </div>

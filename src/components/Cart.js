@@ -1,9 +1,23 @@
 import React, { Component } from 'react';
+import '../Assets/css/styles.css';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
 class Cart extends Component {
-
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: {}
+        }
+    }
+    componentDidMount() {
+        axios.put('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
+            this.setState({
+                data: response.data.items[this.props.id - 1]
+            })
+        })
+    }
     render() {
-        let { buttonName , dataProduct } = this.props;
+        let { buttonName, dataProduct } = this.props;
         return (
             <div className="container">
                 <div className="row">
@@ -19,25 +33,25 @@ class Cart extends Component {
                             <tbody>
                                 <tr>
                                     <td>
-                                    <img src={ dataProduct && dataProduct.img} width="150px" alt="img-product"/>
+                                        <img src={dataProduct === undefined ? '' : dataProduct.img} width="150px" alt="img-product" />
                                     </td>
-                                    <td>1</td>
-                                    <td>{ dataProduct && dataProduct.cost}</td>
+                                    <td>{dataProduct === undefined ? '' : dataProduct.amount}</td>
+                                    <td>{dataProduct === undefined ? '' : dataProduct.cost}</td>
                                 </tr>
                                 {buttonName ? (
                                     <tr>
                                         <td>
-                                            <NavLink className="btn btn-secondary" to="/Mycart">{buttonName}</NavLink>
+                                            <NavLink className="btn btn-secondary" to="/Cart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
-                                        <td>{ dataProduct && dataProduct.cost} บาท</td>
+                                        <td>{dataProduct === undefined ? '' : dataProduct.cost} บาท</td>
                                     </tr>
                                 ) :
                                     (
                                         <tr>
                                             <td></td>
                                             <td>ราคารวม</td>
-                                            <td>{ dataProduct && dataProduct.cost} บาท</td>
+                                            <td>{dataProduct === undefined ? '' : dataProduct.cost} บาท</td>
                                         </tr>
                                     )}
                             </tbody>

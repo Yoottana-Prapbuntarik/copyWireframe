@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Cart from '../components/Cart';
+import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 class Mycart extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -11,15 +10,13 @@ class Mycart extends Component {
         }
     }
     componentDidMount() {
-        let numberItems = this.props.match.params.id;
-        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
+        axios.get('https://shop-api-services.herokuapp.com/Cart').then((response) => {
             this.setState({
-                data: response.data.items[numberItems - 1]
+                data: response.data[0]
             })
         })
     }
     render() {
-        let { data } = this.state;
         return (
             <div>
                 <div className="container Mycart mt-5">
@@ -31,7 +28,7 @@ class Mycart extends Component {
                         </div>
                     </div>
                 </div>
-                <Cart dataProduct={data} />
+                <Cart dataProduct={this.state.data} />
                 <hr width="58%" />
                 <div className="container">
                     <div className="row">
@@ -42,7 +39,7 @@ class Mycart extends Component {
                             <NavLink to="#">ล้างตะกร้า</NavLink>
                         </div>
                         <div className="col-md-3  py-3 col-12">
-                            <NavLink className="btn btn-secondary w-100" to={`/Address/${this.props.match.params.id}`}>ดำเนินการต่อ</NavLink>
+                            <NavLink className="btn btn-secondary w-100" to={`/Address`}>ดำเนินการต่อ</NavLink>
                         </div>
                     </div>
                 </div>
