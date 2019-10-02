@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 class ProductDetail extends Component {
 
@@ -13,9 +15,9 @@ class ProductDetail extends Component {
         this.toggle = this.toggle.bind(this);
         this.addItemToCart = this.addItemToCart.bind(this);
     }
-    componentDidMount() {
+    async  componentDidMount() {
         let numberItems = this.props.match.params.id;
-        axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
+        await axios.get('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
             this.setState({
                 data: response.data.items[[numberItems - 1]]
             })
@@ -28,10 +30,8 @@ class ProductDetail extends Component {
             amount: this.state.amount,
             cost: this.state.data.cost * this.state.amount
         }
-        axios.post('https://shop-api-services.herokuapp.com/Cart', dataToDb)
-        this.setState({
-            amount: 1
-        })
+        this.props.addItems(dataToDb);
+        this.props.SumCost(dataToDb.cost);
     }
 
     toggle() {
@@ -52,11 +52,11 @@ class ProductDetail extends Component {
                     <div className="col-md-6 mt-5">
                         <div className="container">
                             <h3 className="mt-5">{data.name}
-                            <b>
-                            <br />{data.cost}&nbsp;<s className="text-secondary">1280 บาท</s>
-                            </b>
+                                <b>
+                                    <br />{data.cost}&nbsp;<s className="text-secondary">1280 บาท</s>
+                                </b>
                             </h3>
-                            <br/>
+                            <br />
                             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
                                 <DropdownToggle className="buttonAmount">
                                     {this.state.amount}
@@ -71,7 +71,8 @@ class ProductDetail extends Component {
                                 </DropdownMenu>
                             </Dropdown>
                             <br />
-                            <a className="buttonAddCart mt-3" href="/Mycart" onClick={this.addItemToCart}>หยิบใส่ตระกร้า</a>
+                            {/* <a className="buttonAddCart mt-3" href="/Mycart">หยิบใส่ตระกร้า</a> */}
+                            <NavLink className="buttonAddCart btn mt-3" to="/Mycart" onClick={this.addItemToCart}>หยิบใส่ตระกร้า</NavLink>
                         </div>
                     </div>
                 </div>
@@ -79,4 +80,30 @@ class ProductDetail extends Component {
         )
     }
 }
-export default ProductDetail;
+
+const mapStateToProps = (state) => {
+    return {
+        addedItems: state.addedItems,
+        allCost: state.allCost
+    }
+}
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addItems: (dataToDb) => {
+            dispatch({
+                type: "ADD_Item",
+                payload: dataToDb
+            })
+        },
+        SumCost:(cost)=>{
+            dispatch({
+                type:"Total",
+                payload:cost
+            })
+        }
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductDetail);

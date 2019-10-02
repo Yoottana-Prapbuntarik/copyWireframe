@@ -13,9 +13,9 @@ import CartConfirm from './pages/CartConfirm';
 import Booking from './pages/Booking';
 import Member from './pages/Member';
 import Orders from './components/Orders';
-import About from './components/DataMember';
-import ConfirmPayment from './components/ConfirmPayment';
-import MyAddress from './components/MyAddress';
+import About from './pages/DataMember';
+import ConfirmPayment from './pages/ConfirmPayment';
+import MyAddress from './pages/MyAddress';
 import Login from './pages/Login';
 import './Assets/css/styles.css';
 
@@ -24,6 +24,7 @@ class App extends Component {
 
   render() {
     return (
+
       <BrowserRouter>
         <div>
           {/* It's app js used it for route path */}
@@ -54,4 +55,5 @@ class App extends Component {
     )
   }
 }
+
 export default App;

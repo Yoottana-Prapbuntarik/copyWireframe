@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {connect} from 'react-redux';
 import Cart from './Cart';
 class Order extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {}
-        }
-    }
-    componentDidMount() {
-        axios.get('https://shop-api-services.herokuapp.com/Cart').then((response) => {
-            this.setState({
-                data: response.data[0]
-            })
-        })
-    }
-
     render() {
         return (
             <div>
                 <h1>รายการสั่งซื้อ</h1>
-                <Cart  dataProduct={this.state.data}/>
+                <Cart  dataProduct={this.props.addedItems} AllPrice={this.props.allCost}/>
             </div>
         )
     }
 }
+const mapStateToProps =(state)=>{
+    return{
+        addedItems: state.addedItems,
+        allCost:state.allCost
 
-export default Order;
+    }
+}
+export default connect(mapStateToProps)(Order);

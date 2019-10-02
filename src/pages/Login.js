@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
             user: '',
             pass: '',
+            redirect: false
+
         }
         this.handleLogin = this.handleLogin.bind(this);
         this.handleUsername = this.handleUsername.bind(this);
@@ -20,6 +23,7 @@ class Login extends Component {
             pass: e.target.value
         })
     }
+
     handleLogin(e) {
         let username = "admin";
         let password = "123456";
@@ -27,16 +31,18 @@ class Login extends Component {
 
         if (this.state.user === username && password === this.state.pass) {
             alert('sucessful');
-            window.location = "/Member";
+            this.setState({ redirect: true })
         } else {
             alert('Invalid username and password');
         }
     }
     render() {
+        const { redirect } = this.state;
+        if (redirect) {
+            return <Redirect to='/Member' />;
+        }
         return (
             <div className="container">
-                {console.log('user', this.state.user)}
-                {console.log('password', this.state.pass)}
                 <div className="row">
                     <div className="col-12" style={{ marginTop: 250 }}>
                         <form>

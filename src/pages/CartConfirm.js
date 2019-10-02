@@ -1,25 +1,10 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { NavLink } from 'react-router-dom';
 import BarStatus from '../components/BarStatus';
 import Cart from '../components/Cart';
-class CartConfirm extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {}
-        }
-    }
-    componentDidMount() {
-        axios.get('https://shop-api-services.herokuapp.com/Cart').then((response) => {
-            this.setState({
-                data: response.data[0]
-            })
-        })
-    }
+import { connect } from 'react-redux';
+class CartConfirm extends Component {    
     render() {
-        let { data } = this.state;
         return (
             <div className="container ">
                 <div className="Mycart row">
@@ -57,7 +42,7 @@ class CartConfirm extends Component {
                     <div className="col-6 text-right">
                         <NavLink className="text-primary" to="#"><b>แก้ไขสินค้า</b></NavLink>
                     </div>
-                    <Cart dataProduct={data} id={this.props.match.params.id} />
+                    <Cart dataProduct={this.props.addedItems} AllPrice={this.props.allCost} />
                     <div className="col-12 text-right">
                         <NavLink className="btn btn-secondary w-50" to={`/Booking`}>ถัดไป</NavLink>
                     </div>
@@ -66,4 +51,10 @@ class CartConfirm extends Component {
         )
     }
 }
-export default CartConfirm;
+const mapStateToProps = (state) => {
+    return {
+        addedItems: state.addedItems,
+        allCost: state.allCost
+    }
+}
+export default connect(mapStateToProps)(CartConfirm);

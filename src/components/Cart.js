@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../Assets/css/styles.css';
 import { NavLink } from 'react-router-dom';
-import axios from 'axios';
 class Cart extends Component {
     constructor(props) {
         super(props);
@@ -9,15 +8,9 @@ class Cart extends Component {
             data: {}
         }
     }
-    componentDidMount() {
-        axios.put('https://www.mocky.io/v2/5d45c1fa300000c86ec5c8fc').then((response) => {
-            this.setState({
-                data: response.data.items[this.props.id - 1]
-            })
-        })
-    }
+
     render() {
-        let { buttonName, dataProduct } = this.props;
+        let { buttonName, dataProduct, AllPrice } = this.props;
         return (
             <div className="container">
                 <div className="row">
@@ -31,27 +24,33 @@ class Cart extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <img src={dataProduct === undefined ? '' : dataProduct.img} width="150px" alt="img-product" />
-                                    </td>
-                                    <td>{dataProduct === undefined ? '' : dataProduct.amount}</td>
-                                    <td>{dataProduct === undefined ? '' : dataProduct.cost}</td>
-                                </tr>
+                                {
+                                    dataProduct.map((dataProducts, i) => {
+                                        return (
+                                            <tr>
+                                                <td key={i}>
+                                                    <img src={dataProducts === undefined ? '' : dataProducts.img} width="150px" alt="img-product" />
+                                                </td>
+                                                <td>{dataProducts === undefined ? '' : dataProducts.amount}</td>
+                                                <td>{dataProducts === undefined ? '' : dataProducts.cost}</td>
+                                            </tr>
+                                        )
+                                    })
+                                }
                                 {buttonName ? (
                                     <tr>
                                         <td>
                                             <NavLink className="btn btn-secondary" to="/Cart">{buttonName}</NavLink>
                                         </td>
                                         <td>ราคารวม</td>
-                                        <td>{dataProduct === undefined ? '' : dataProduct.cost} บาท</td>
+                                        <td>{dataProduct === undefined ? '' : AllPrice} บาท</td>
                                     </tr>
                                 ) :
                                     (
                                         <tr>
                                             <td></td>
                                             <td>ราคารวม</td>
-                                            <td>{dataProduct === undefined ? '' : dataProduct.cost} บาท</td>
+                                            <td>{dataProduct === undefined ? '' : AllPrice} บาท</td>
                                         </tr>
                                     )}
                             </tbody>

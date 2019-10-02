@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Sidebar from './Sidebar';
+import Sidebar from '../components/Sidebar';
 class  ConfirmPayment extends Component {
     render() {
         return (

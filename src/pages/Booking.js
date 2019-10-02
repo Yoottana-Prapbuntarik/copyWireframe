@@ -14,7 +14,7 @@ class Booking extends Component {
                         <h1><b>สั่งซื้อเรียบร้อยแล้ว (รอชำระเงิน)</b></h1>
                         <h5><b>จำนวนเงินที่ต้องชำระ</b></h5>
                         <h3><b>900 บาท</b></h3>
-                        <NavLink type="submit" className="btn btn-secondary w-100" to="/Member">ถัดไป</NavLink>
+                        <NavLink type="submit" className="btn btn-secondary w-100" to="/Login">ถัดไป</NavLink>
                         <br />
                         <NavLink type="submit" className="btn btn-light w-100 mt-3" to="/">ไปหน้าแรก</NavLink>
                     </div>
